@@ -44,6 +44,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.showAll_button = new System.Windows.Forms.Button();
             this.songList = new System.Windows.Forms.ListBox();
+            this.findButton = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.webViewDisplay = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.playButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.webViewDisplay)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -102,9 +107,9 @@
             // 
             // addSongButton
             // 
-            this.addSongButton.Location = new System.Drawing.Point(70, 263);
+            this.addSongButton.Location = new System.Drawing.Point(44, 231);
             this.addSongButton.Name = "addSongButton";
-            this.addSongButton.Size = new System.Drawing.Size(184, 40);
+            this.addSongButton.Size = new System.Drawing.Size(109, 40);
             this.addSongButton.TabIndex = 6;
             this.addSongButton.Text = "Add Song";
             this.addSongButton.UseVisualStyleBackColor = true;
@@ -165,9 +170,9 @@
             // 
             // showAll_button
             // 
-            this.showAll_button.Location = new System.Drawing.Point(70, 309);
+            this.showAll_button.Location = new System.Drawing.Point(44, 277);
             this.showAll_button.Name = "showAll_button";
-            this.showAll_button.Size = new System.Drawing.Size(184, 40);
+            this.showAll_button.Size = new System.Drawing.Size(109, 40);
             this.showAll_button.TabIndex = 15;
             this.showAll_button.Text = "Show All Songs";
             this.showAll_button.UseVisualStyleBackColor = true;
@@ -181,11 +186,57 @@
             this.songList.Size = new System.Drawing.Size(470, 173);
             this.songList.TabIndex = 16;
             // 
+            // findButton
+            // 
+            this.findButton.Location = new System.Drawing.Point(159, 231);
+            this.findButton.Name = "findButton";
+            this.findButton.Size = new System.Drawing.Size(109, 40);
+            this.findButton.TabIndex = 17;
+            this.findButton.Text = "Find Song";
+            this.findButton.UseVisualStyleBackColor = true;
+            this.findButton.Click += new System.EventHandler(this.findButton_Click);
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(159, 277);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(109, 40);
+            this.clearButton.TabIndex = 18;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
+            // webViewDisplay
+            // 
+            this.webViewDisplay.AllowExternalDrop = true;
+            this.webViewDisplay.CreationProperties = null;
+            this.webViewDisplay.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webViewDisplay.Location = new System.Drawing.Point(816, 43);
+            this.webViewDisplay.Name = "webViewDisplay";
+            this.webViewDisplay.Size = new System.Drawing.Size(312, 349);
+            this.webViewDisplay.Source = new System.Uri("https://www.microsoft.com", System.UriKind.Absolute);
+            this.webViewDisplay.TabIndex = 19;
+            this.webViewDisplay.ZoomFactor = 1D;
+            // 
+            // playButton
+            // 
+            this.playButton.Location = new System.Drawing.Point(816, 398);
+            this.playButton.Name = "playButton";
+            this.playButton.Size = new System.Drawing.Size(109, 40);
+            this.playButton.TabIndex = 20;
+            this.playButton.Text = "Play";
+            this.playButton.UseVisualStyleBackColor = true;
+            this.playButton.Click += new System.EventHandler(this.playButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1151, 450);
+            this.Controls.Add(this.playButton);
+            this.Controls.Add(this.webViewDisplay);
+            this.Controls.Add(this.clearButton);
+            this.Controls.Add(this.findButton);
             this.Controls.Add(this.songList);
             this.Controls.Add(this.showAll_button);
             this.Controls.Add(this.label7);
@@ -203,11 +254,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MaximumSize = new System.Drawing.Size(1500, 1500);
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "MainForm";
             this.Text = "Video Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.webViewDisplay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,6 +283,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button showAll_button;
         private System.Windows.Forms.ListBox songList;
+        private System.Windows.Forms.Button findButton;
+        private System.Windows.Forms.Button clearButton;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webViewDisplay;
+        private System.Windows.Forms.Button playButton;
     }
 }
 
